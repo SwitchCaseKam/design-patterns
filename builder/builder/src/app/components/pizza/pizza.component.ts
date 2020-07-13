@@ -18,17 +18,20 @@ export class PizzaComponent implements OnInit {
 
     console.log('Margherita pizza:\n');
     const pizzaMargheritaBuilder = new MargheritaBuilder();
+    pizzaDirector.setBuilder(pizzaMargheritaBuilder);
     pizzaDirector.buildMargherita();
     pizzaMargheritaBuilder.getProduct().displayIngredients();
 
     console.log('Funghi pizza:\n');
     const pizzaFunghiBuilder = new FunghiBuilder();
+    pizzaDirector.setBuilder(pizzaFunghiBuilder);
     pizzaDirector.buildFunghi();
     pizzaFunghiBuilder.getProduct().displayIngredients();
 
     console.log('Meat pizza:\n');
     const pizzaMeatBuilder = new MeatPizzaBuilder();
-    pizzaDirector.buildFunghi();
+    pizzaDirector.setBuilder(pizzaMeatBuilder);
+    pizzaDirector.buildMeatPizza();
     pizzaMeatBuilder.getProduct().displayIngredients();
   }
 
